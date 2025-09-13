@@ -1,9 +1,14 @@
 
-## Tabú
+## N Reinas con Tabú
+# Integrantes 
+- Payan Urquidez Rafael Alberto.
+- Quiñonez Ramirez Nestor de Jesus.
 # Entradas
 Como único valor a ingresar está el tamaño del tablero (N), que va definir la cantidad de reinas que habrá en el tablero.
 # Salida
-La salida mostrará la mejor solución, en caso de no encontrar una solución que satisfaga al problema, mostrará también el número de colisiones, la cantidad de pasos para llegar a la solución y los propios pasos.
+La salida mostrará la mejor solución, en caso de no encontrar una solución que satisfaga al problema mostrará el mejor estado encontrado con el número de colisiones. También la cantidad de pasos para llegar a la solución y los propios pasos.
+# Requerimientos
+No es necesario instalar ninguna librería, únicamente Python.
 
 # Solución
 Lo primero es generar un arreglo con los números de 1 a N permutados de manera aleatoria.
