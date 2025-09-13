@@ -9,6 +9,8 @@ def generateRandomSolution(N):
     random.shuffle(chess)
     return chess
 
+# Dado una solucion inicial y las posciones para 
+# hacer el swap, se regresa una solucion vecina
 def getNeighbor(chess, i, j):
     chess[i], chess[j] = chess[j], chess[i]
     return chess
@@ -42,16 +44,23 @@ def tabu(N):
     # Generamos una primera solucion aleatoria
     chess = generateRandomSolution(N)
 
-    # Si da la casualidad de que es la que buscamos retornamos
+    # bestChess guardara la mejor solucion global encontrada
+    # bestSolve guardara el numero de colisiones de bestChess
     bestSolve = targetFunction(chess, N)
     bestChess = chess
+
+    # steps llevara el registro de colisiones de los mejores vecinos
+    # por default agregamos el numero de colisiones del estado inicial
     steps = [bestSolve]
+
+    # Si da la casualidad de que la solucion inicial es la mejor
+    # la retornamos
     if bestSolve == 0:
-        return chess
+        return (chess, steps)
 
     # Creamos una lista donde estaran los movimientos
     # tabu y establecemos el maximo
-    maxTabu = N // 2 + 1
+    maxTabu = (N // 2) + 1
     tabuMovs = deque()
 
     # Definimos un maximo de iteraciones permitidos 
@@ -60,8 +69,10 @@ def tabu(N):
     tries = 0
 
     while tries < maxTries:
-        tries += 1
 
+        # bestNeighbor es donde guardaremos el mejor vecino
+        # bestMov es el movimiento hecho para llegar al mejor vecino
+        # bestColission el numero de colisiones de bestNeighbor
         bestNeighbor = []
         bestMov = ()
         bestColission = N * N
@@ -78,11 +89,12 @@ def tabu(N):
 
             if mov in tabuMovs:
                 continue
-
+            
+            # Obtenemos el vecino y sus colisiones
             neighbor = getNeighbor(chess, i, j)
-
             neighborColission = targetFunction(neighbor, N)
-            # Si el vecino tiene 0 colisiones se encontro la solución
+
+            # Si el vecino tiene 0 colisiones se encontro la mejor solución
             if(neighborColission == 0):
                 steps.append(0)
                 return (neighbor, steps)
@@ -104,7 +116,7 @@ def tabu(N):
         # Guardamos el movimiento usado en los tabus
         # Si la cola excedio el maximo, sacamos el primero
         tabuMovs.append(bestMov)
-        if len(tabuMovs) >= maxTabu:
+        if len(tabuMovs) > maxTabu:
             tabuMovs.popleft()
         
         # Actualizamos chess para que sea el mejor vecino
@@ -117,6 +129,7 @@ def tabu(N):
     return (bestChess, steps) 
 
 
+# Imprimir el estado en formato tablero
 def printChessBoard(chess, N):
     for i in range(N):
         row = "*" * N
@@ -128,6 +141,8 @@ def main():
     # Preguntar por el tamaño del tablero
     N = int(input("Inserte el tamaño del tablero: "))
     
+    # Obtenemos la mejor solución encontrada y los pasos dados
+    # para llegar a ella
     (chessSolve, steps) = tabu(N)
     colissions = targetFunction(chessSolve, N)
 
