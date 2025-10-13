@@ -1,5 +1,6 @@
 import pandas as pd
 import random
+import time
 from collections import deque
 
 # Leer las matrices de distancias
@@ -136,18 +137,15 @@ def solve(centers, stores, distances):
 
     # Definimos un maximo de iteraciones permitidos 
     # sin mejora
-    max_tries = 2000
-    tries = 0
+    start_time = time.time()
+    max_time=10.0
 
-    while tries < max_tries:
+    while time.time() - start_time < max_time:
         (best_neighbor, neighbor_cost) = generate_best_neighbor(act_routes, act_cost, centers, distances, tabu_stores)
 
         if neighbor_cost < best_cost:
             best_cost = neighbor_cost
             best_routes = best_neighbor
-            tries = 0
-        else:
-            tries += 1
 
         if len(tabu_stores) > max_tabu:
             tabu_stores.popleft()
