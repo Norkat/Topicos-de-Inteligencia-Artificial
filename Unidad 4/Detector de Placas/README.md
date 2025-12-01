@@ -22,7 +22,6 @@ Enlace al video creado para mostrar la aplicación funcionando: https://youtube.
 
 * Node.js
 * Express
-* Render (deploy)
 
 ### **Base de Datos**
 
@@ -39,6 +38,7 @@ Enlace al video creado para mostrar la aplicación funcionando: https://youtube.
 ### **Otros**
 
 * Ngrok (túnel HTTPS para el modelo)
+* Render (deploy)
 
 ---
 
