@@ -44,14 +44,14 @@ Enlace al video creado para mostrar la aplicación funcionando: https://youtube.
 
 ## **Características principales**
 
-### 🔹 **1. Detección de matrículas con YOLO**
+### **1. Detección de matrículas con YOLO**
 
 * Entrenamiento personalizado usando Ultralytics YOLO.
 * Dataset creado con Roboflow: imágenes reales y datasets públicos.
 * Exportación del modelo para uso en producción.
 * Recorte automático de la región de matrícula detectada.
 
-### 🔹 **2. Reconocimiento de texto (OCR)**
+### **2. Reconocimiento de texto (OCR)**
 
 * Implementación con **Tesseract**.
 * Preprocesamiento avanzado:
@@ -63,12 +63,12 @@ Enlace al video creado para mostrar la aplicación funcionando: https://youtube.
 * Validación mediante expresiones regulares de patrones de placas mexicanas.
 * Reintento automático si la primera lectura falla.
 
-### 🔹 **3. Base de datos en la nube (Supabase + PostgreSQL)**
+### **3. Base de datos en la nube (Supabase + PostgreSQL)**
 
 * API REST generada automáticamente.
 * Acceso desde backend y aplicación móvil.
 
-### 🔹 **4. Backend Principal (Node.js + Express + Render)**
+### **4. Backend Principal (Node.js + Express + Render)**
 
 Expone endpoints para:
 
@@ -80,13 +80,13 @@ Expone endpoints para:
 > El backend **no procesa imágenes**.
 > Solo recibe texto de la matrícula y consulta Supabase.
 
-### 🔹 **5. Backend del modelo (YOLO + OCR) usando Ngrok**
+### **5. Backend del modelo (YOLO + OCR) usando Ngrok**
 
 * Servidor local donde corre YOLO + OCR.
 * Exposición temporal mediante **Ngrok** para integrarlo con el backend principal.
 * Se envían imágenes → devuelve texto de la placa o error.
 
-### 🔹 **6. Aplicación móvil (React Native + Expo Go)**
+### **6. Aplicación móvil (React Native + Expo Go)**
 
 * Captura imágenes con la cámara.
 * Envía fotos al endpoint del modelo (Ngrok).
