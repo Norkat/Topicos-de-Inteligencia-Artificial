@@ -17,6 +17,7 @@ Para el backend es necesario tener instalado en el dispositivo node y express:
 https://nodejs.org/en
 ```bash
 npm install express
+```
 
 Una vez todo este instalado, dentro del proyecto instalar todas las dependencias:
 ```bash
