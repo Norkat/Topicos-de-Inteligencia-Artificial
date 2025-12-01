@@ -13,12 +13,6 @@ El backend ofrece los siguientes endpoints:
 - /api/ia/detectPlate: Para pasar una imagen que pueda procesar el modelo de vision artificial y regrese la placa contenida en la imagen
 
 ## Dependencias
-Para el backend es necesario tener instalado en el dispositivo node y express:
-https://nodejs.org/en
-```bash
-npm install express
-```
-
-Una vez todo este instalado, dentro del proyecto instalar todas las dependencias:
+Para el backend es necesario tener instalado node en el dispositivo donde se va a correr, luego de eso solo en necesario instalar las dependencias:
 ```bash
 npm install
