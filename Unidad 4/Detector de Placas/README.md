@@ -42,7 +42,7 @@ Enlace al video creado para mostrar la aplicación funcionando: https://youtube.
 
 ---
 
-## 📌 **Características principales**
+## **Características principales**
 
 ### 🔹 **1. Detección de matrículas con YOLO**
 
@@ -76,7 +76,7 @@ Expone endpoints para:
 * Registrar vehículos.
 * Consultar un vehículo y su propietario a partir de una placa en texto.
 
-> 📌 *Nota:*
+> *Nota:*
 > El backend **no procesa imágenes**.
 > Solo recibe texto de la matrícula y consulta Supabase.
 
@@ -96,7 +96,7 @@ Expone endpoints para:
 
 ---
 
-## 📂 **Arquitectura General**
+## **Arquitectura General**
 
 ```
 React Native (captura imagen)
@@ -113,7 +113,7 @@ Información del vehículo + propietario
 ```
 ---
 
-## 🧠 Flujo completo del sistema
+## Flujo completo del sistema
 
 1. El usuario captura una imagen desde la app móvil.
 2. La imagen se envía al servidor del modelo usando Ngrok.
