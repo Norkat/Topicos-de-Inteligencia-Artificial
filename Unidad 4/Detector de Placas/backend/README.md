@@ -9,12 +9,15 @@ El backend ofrece los siguientes endpoints:
 - /api/owner/register: Para registar un propietario del auto
 - /api/owner/owners: Para obtener todos los propietarios registrados en la base de datos
 - /api/car/register: Para registrar un auto
-- /api/car/cars/<plate>: Para regresar el auto que este registrado con la <plata> dada, o mencionar su inexistencia en caso de que no haya ningnuno.
-- 
+- /api/car/cars/licensePlate: Para regresar el auto que este registrado con la placa dada, o mencionar su inexistencia en caso de que no haya ningnuno auto con esa placa.
+- /api/ia/detectPlate: Para pasar una imagen que pueda procesar el modelo de vision artificial y regrese la placa contenida en la imagen
 
 ## Dependencias
-Instalar pandas para la lectura de datos en csv y el uso de dataframes.
-Instalar numpy para el uso de sus vectores y funciones avanzadas.
-Instalar matplotlib para el uso de graficas visuales.
+Para el backend es necesario tener instalado en el dispositivo node y express:
+https://nodejs.org/en
 ```bash
-pip install numpy pandas matplotlib
+npm install express
+
+Una vez todo este instalado, dentro del proyecto instalar todas las dependencias:
+```bash
+npm install
