@@ -9,7 +9,7 @@ Para poder correr el frontend es necesario instalar en el telefono movil Expo Go
 
 ## Conexión con el BACKEND
 Hay dos conexiones, una esta en la nube con Render, y no se necesita hacer nada para establecerla.
-La otra para pruebas lo corrimos con Ngrok, para poder establecerlo de forma local es necesario utilizar Ngrok para poder levantar el backend de forma local y utilizarlo en PlateScanner.jsx. Este segundo backend se utilizo para correr el modelo de vision artificial.
+En la segunda conexion, para poder establecerlo de forma local es necesario utilizar Ngrok. Es necesario levantar el backend de forma local y utilizarlo en PlateScanner.jsx. Este segundo backend se utilizo para correr el modelo de vision artificial.
 
 ## Dependencias
 Para el frontend es necesario instalar las dependencias:
